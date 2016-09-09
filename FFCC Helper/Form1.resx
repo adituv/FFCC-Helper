@@ -117,76 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="bonus_avoid_damage" xml:space="preserve">
-    <value>Avoid damage</value>
-  </data>
-  <data name="bonus_defeat_flying_enemies" xml:space="preserve">
-    <value>Defeat flying enemies</value>
-  </data>
-  <data name="bonus_defeat_with_focus_attacks" xml:space="preserve">
-    <value>Defeat enemies with focus attacks</value>
-  </data>
-  <data name="bonus_defeat_with_spells" xml:space="preserve">
-    <value>Defeat enemies with spells</value>
-  </data>
-  <data name="bonus_defeat_with_spell_fusion" xml:space="preserve">
-    <value>Defeat enemies with spell fusion</value>
-  </data>
-  <data name="bonus_dodge_attacks" xml:space="preserve">
-    <value>Dodge attacks</value>
-  </data>
-  <data name="bonus_dodge_thrown_rocks" xml:space="preserve">
-    <value>Dodge thrown rocks</value>
-  </data>
-  <data name="bonus_dont_cast_spells" xml:space="preserve">
-    <value>Don't cast spells</value>
-  </data>
-  <data name="bonus_dont_heal_allies" xml:space="preserve">
-    <value>Don't heal allies</value>
-  </data>
-  <data name="bonus_dont_heal_yourself" xml:space="preserve">
-    <value>Don't heal yourself</value>
-  </data>
-  <data name="bonus_dont_pick_anything_up" xml:space="preserve">
-    <value>Don't pick anything up</value>
-  </data>
-  <data name="bonus_dont_use_focus" xml:space="preserve">
-    <value>Don't use focus attacks</value>
-  </data>
-  <data name="bonus_dont_use_physical" xml:space="preserve">
-    <value>Don't use physical attacks</value>
-  </data>
-  <data name="bonus_eat_lots_of_food" xml:space="preserve">
-    <value>Eat lots of food</value>
-  </data>
-  <data name="bonus_finish_quickly" xml:space="preserve">
-    <value>Finish as quickly as possible</value>
-  </data>
-  <data name="bonus_inflict_damage" xml:space="preserve">
-    <value>Inflict damage</value>
-  </data>
-  <data name="bonus_open_treasure_chests" xml:space="preserve">
-    <value>Open Treasure Chests</value>
-  </data>
-  <data name="bonus_pick_up_items" xml:space="preserve">
-    <value>Pick up items</value>
-  </data>
-  <data name="bonus_pick_up_magicite" xml:space="preserve">
-    <value>Pick up magicite</value>
-  </data>
-  <data name="bonus_pick_up_money" xml:space="preserve">
-    <value>Pick up money</value>
-  </data>
-  <data name="bonus_take_magical_damage" xml:space="preserve">
-    <value>Take magical damage</value>
-  </data>
-  <data name="bonus_take_physical_damage" xml:space="preserve">
-    <value>Take physical damage</value>
-  </data>
-  <data name="bonus_unknown" xml:space="preserve">
-    <value>(Unknown bonus)</value>
-  </data>
-  <data name="bonus_use_items" xml:space="preserve">
-    <value>Use items</value>
-  </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
