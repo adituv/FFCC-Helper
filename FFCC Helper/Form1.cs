@@ -12,50 +12,49 @@ namespace FFCC_Helper
 {
     using System.Diagnostics;
 
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
         private IntPtr processHandle;
 
-        public Form1() {
-            InitializeComponent();
-        }
+        private Bonus bonus;
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            if (BonusPoints.bonusTexts.ContainsKey((int)numericUpDown1.Value))
-            {
-                label1.Text = BonusPoints.bonusTexts[(int)numericUpDown1.Value];
-            }
-            else
-            {
-                label1.Text = BonusPoints.bonusTexts[-1] + " " + (int)numericUpDown1.Value;
-            }
-        }
-
-        private void updateBonus()
-        {
-            byte[] buffer = new byte[1];
-            int bytesRead = 0;
-            NativeMethods.ReadProcessMemory((int)processHandle, 0x8020FE14, buffer, 1, ref bytesRead);
-
-            numericUpDown1.Value = buffer[0];
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void FindDolphin()
         {
             Process p = Process.GetProcessesByName("Dolphin").FirstOrDefault();
-            if (p == null)
-            {
+            if (p == null) {
                 MessageBox.Show("Could not find instance of Dolphin.");
-                this.Close();
+                return;
             }
+            btnConnect.Enabled = false;
             processHandle = NativeMethods.OpenProcess(0x10, false, p.Id);
             timer1.Start();
         }
 
+        public frmMain() {
+            InitializeComponent();
+            bonus = new Bonus(0);
+
+            txtCondition.DataBindings.Add("Text", bonus, "Text");
+            txtEnemiesKilled.DataBindings.Add("Text", bonus, "EnemiesDefeated");
+            txtItemsPickedUp.DataBindings.Add("Text", bonus, "ItemsPickedUp");
+            txtPointsPos.DataBindings.Add("Text", bonus, "BonusPosPoints");
+            txtPointsNeg.DataBindings.Add("Text", bonus, "BonusNegPoints");
+            txtPointsTotal.DataBindings.Add("Text", bonus, "Points");
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.updateBonus();
+            bool updated = bonus.Update(processHandle);
+            if (!updated)
+            {
+                btnConnect.Enabled = true;
+                timer1.Stop();
+                MessageBox.Show("Lost instance of Dolphin");
+            }
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e) {
+            this.FindDolphin();
         }
     }
 }
